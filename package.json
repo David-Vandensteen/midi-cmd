@@ -1,0 +1,34 @@
+{
+  "name": "midi-cmd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js -i 1 -c 73 -v 0",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-Vandensteen/midi-cmd.git"
+  },
+  "author": "David Vandensteen <dvandensteen@gmail.com>",
+  "license": "MIT",
+  "imports": {
+    "#src/*": "./src/*.js"
+  },
+  "bugs": {
+    "url": "https://github.com/David-Vandensteen/midi-cmd/issues"
+  },
+  "homepage": "https://github.com/David-Vandensteen/midi-cmd#readme",
+  "dependencies": {
+    "arg": "^5.0.1",
+    "midi": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.24.0"
+  }
+}
