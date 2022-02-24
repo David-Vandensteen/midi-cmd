@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js -i 1 -c 73 -v 0",
+    "start": "node src/index.js --help",
     "lint": "eslint src",
     "package": "caxa --input . --output dist/midi-cmd.exe -- {{caxa}}/node_modules/.bin/node.exe {{caxa}}/src/index.js"
   },
