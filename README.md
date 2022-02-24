@@ -1,6 +1,6 @@
 # midi-cmd
 
-Command line utlity to send a midi control change message to a midi interface.
+Command line utility to send a midi control change message to a midi interface.
 This can help with debugging or configuring a midi environment.
 
 I provide a Windows (x64) binary which is instantly usable in releases section.
