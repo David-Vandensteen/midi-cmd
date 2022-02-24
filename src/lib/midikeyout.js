@@ -19,6 +19,7 @@ export default class MidiKeyOut extends midi.output {
   }
 
   register({ portId }) {
+    this.portId = portId;
     this.openPort(portId);
     return this;
   }
@@ -26,18 +27,16 @@ export default class MidiKeyOut extends midi.output {
   sendCCMessage({ cc, value }) {
     const message = [176, cc, value];
     super.sendMessage(message);
-    log('send:', message);
+    log('send:', message, 'to', this.getAvailableInterfacesName()[this.portId]);
     return this;
   }
 
   stop() {
-    log('exit');
     this.closePort();
     process.exit();
   }
 
   start() {
-    log('start : end');
     return this;
   }
 }
