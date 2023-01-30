@@ -1,5 +1,5 @@
 {
-  "name": "midi-cmd",
+  "name": "midi-send",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,11 +7,11 @@
   "scripts": {
     "start": "node src/index.js --help",
     "lint": "eslint src",
-    "package": "caxa --input . --output dist/midi-cmd.exe -- {{caxa}}/node_modules/.bin/node.exe {{caxa}}/src/index.js"
+    "package": "npx caxa --input . --output dist/midi-send.exe --exclude dist -- {{caxa}}/node_modules/.bin/node.exe {{caxa}}/src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/David-Vandensteen/midi-cmd.git"
+    "url": "git+https://github.com/David-Vandensteen/midi-send.git"
   },
   "author": "David Vandensteen <dvandensteen@gmail.com>",
   "license": "MIT",
@@ -19,17 +19,16 @@
     "#src/*": "./src/*.js"
   },
   "bugs": {
-    "url": "https://github.com/David-Vandensteen/midi-cmd/issues"
+    "url": "https://github.com/David-Vandensteen/midi-send/issues"
   },
-  "homepage": "https://github.com/David-Vandensteen/midi-cmd#readme",
+  "homepage": "https://github.com/David-Vandensteen/midi-send#readme",
   "dependencies": {
     "app-root-path": "^3.0.0",
     "arg": "^5.0.1",
-    "fs-extra": "^10.0.1",
-    "midi": "^2.0.0"
+    "easymidi": "^3.0.1",
+    "fs-extra": "^10.0.1"
   },
   "devDependencies": {
-    "caxa": "^2.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-alias": "^1.1.2",

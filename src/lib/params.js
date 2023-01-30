@@ -5,7 +5,7 @@ const { log } = console;
 export default class Params {
   constructor() {
     this.args = arg({
-      '--id': Number,
+      '--out': String,
       '--cc': Number,
       '--value': Number,
       '--list': Boolean,
@@ -13,7 +13,7 @@ export default class Params {
       '--help': Boolean,
 
       // Aliases
-      '-i': '--id',
+      '-o': '--out',
       '-c': '--cc',
       '-v': '--value',
       '-l': '--list',
@@ -22,27 +22,28 @@ export default class Params {
     if (process.argv.length <= 1) Params.help();
   }
 
+  // TODO : read name in package.json
   static help() {
     log('');
     log('');
-    log('midi-cmd', '[options]');
+    log('midi-send', '[options]');
     log('');
     log('     Required options:');
     log('');
-    log('   -i    --id                  -- midi interface id');
-    log('   -c    --cc                  -- cc channel');
+    log('   -o    --out                 -- midi interface name');
+    log('   -c    --cc                  -- cc controller');
     log('   -v    --value               -- value');
     log('');
     log('     Extra options:');
     log('');
-    log('   --list     -l               -- show available midi interface');
+    log('   --list     -l               -- show available midi out interfaces');
     log('   --version                   -- show version');
     log('   --help     -h               -- show help');
     process.exit(0);
   }
 
-  get id() {
-    return this.args['--id'];
+  get out() {
+    return this.args['--out'];
   }
 
   get cc() {
