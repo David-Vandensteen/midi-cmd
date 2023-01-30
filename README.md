@@ -1,4 +1,4 @@
-# midi-cmd
+# midi-send
 
 A command-line utility for sending MIDI control change messages to a MIDI interface.  
 This tool can be useful for debugging or configuring a MIDI environment.  
