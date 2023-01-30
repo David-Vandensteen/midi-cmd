@@ -26,7 +26,7 @@ node src\index.js --list
 ```
 
 ***example:***  
-To send a MIDI control change on MIDI interface 1, channel 73, with the value 64:
+To send a MIDI control change on MIDI interface name "myMidiOutName", channel 73, with the value 64:
 ```
 node src\index.js -i myMidiOutName -c 73 -v 64
 ```
