@@ -1,6 +1,6 @@
 {
   "name": "midi-cmd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -23,15 +23,15 @@
   },
   "homepage": "https://github.com/David-Vandensteen/midi-cmd#readme",
   "dependencies": {
-    "app-root-path": "^3.0.0",
-    "arg": "^5.0.1",
-    "easymidi": "^3.0.1",
+    "app-root-path": "^3.1.0",
+    "arg": "^5.0.2",
+    "easymidi": "^3.1.0",
     "fs-extra": "^10.0.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.24.0"
+    "eslint-plugin-import": "^2.29.1"
   }
 }
