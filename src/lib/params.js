@@ -26,7 +26,7 @@ export default class Params {
   static help() {
     log('');
     log('');
-    log('midi-send', '[options]');
+    log('midi-cmd', '[options]');
     log('');
     log('     Required options:');
     log('');
