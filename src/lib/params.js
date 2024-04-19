@@ -6,6 +6,7 @@ export default class Params {
   constructor() {
     this.args = arg({
       '--out': String,
+      '--ch': Number,
       '--cc': Number,
       '--value': Number,
       '--list': Boolean,
@@ -31,6 +32,7 @@ export default class Params {
     log('     Required options:');
     log('');
     log('   -o    --out                 -- midi interface name');
+    log('         --ch                  -- channel');
     log('   -c    --cc                  -- cc controller');
     log('   -v    --value               -- value');
     log('');
@@ -44,6 +46,12 @@ export default class Params {
 
   get out() {
     return this.args['--out'];
+  }
+
+  get ch() {
+    if (this.args['--ch'] < 0) return 0;
+    if (this.args['--ch'] > 15) return 15;
+    return this.args['--ch'];
   }
 
   get cc() {
