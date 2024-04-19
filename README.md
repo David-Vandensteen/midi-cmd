@@ -1,11 +1,11 @@
 # midi-cmd
 
-Command line utility to send a midi control change message to a midi interface.
-This can help with debugging or configuring a midi environment.
+A command-line utility for sending MIDI control change messages to a MIDI interface.  
+This tool can be useful for debugging or configuring a MIDI environment.  
+  
+A Windows (x64) binary is available in the releases section for immediate use.  
+Note that this tool has not been tested on macOS or Linux.
 
-I provide a Windows (x64) binary which is instantly usable in releases section.
-
-If you use the NodeJS dev project on Windows, you need to have the windows build tools.
 
 ***Not tested on OSX & Linux***
 
@@ -17,18 +17,18 @@ npm i
 ## Usage
 ***Help:***
 ```
-node src\index.js --help
+npm start -- --help
 ```
 
 ***Available midi interfaces:***
 ```
-node src\index.js --list
+npm start -- --list
 ```
 
-***example:***
-Send a midi control change on midi interface 1 channel 73 with the value 64
+***example:***  
+To send a MIDI control change on MIDI interface name "myMidiOutName", channel 0, controller 10 with the value 64:
 ```
-node src\index.js -i 1 -c 73 -v 64
+npm start -- -o myMidiOutName --ch 0 -c 10 -v 64
 ```
 
 ## Development

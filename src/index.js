@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import appRootPath from 'app-root-path';
 import Params from '#src/lib/params';
-import MidiKey from '#src/lib/midikeyout';
+import easymidi from 'easymidi';
 
 const { readJSONSync } = fs;
 const { resolve } = appRootPath;
@@ -9,7 +9,6 @@ const { log } = console;
 const { exit } = process;
 
 const params = new Params();
-const midiKey = new MidiKey();
 
 if (params.help) Params.help();
 
@@ -20,25 +19,21 @@ if (params.version) {
 }
 
 if (params.list) {
-  const availableInt = midiKey.getAvailableInterfacesName();
-  const displayInt = [];
-
-  let id = -1;
-  availableInt.map((int) => {
-    id += 1;
-    return displayInt.push(`${id} ${int}`);
-  });
-
-  log(displayInt.join('\n'));
+  const availableInt = easymidi.getOutputs();
+  log('available midi out interfaces', availableInt);
   exit(0);
 }
 
 if (
-  params.id === undefined
+  params.out === undefined
+  || params.ch === undefined
   || params.cc === undefined
   || params.value === undefined
 ) Params.help();
 
-midiKey.register({ portId: params.id })
-  .sendCCMessage({ cc: params.cc, value: params.value })
-  .stop();
+const midiOut = new easymidi.Output(params.out);
+midiOut.send('cc', {
+  channel: params.ch,
+  controller: params.cc,
+  value: params.value,
+});
