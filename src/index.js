@@ -26,12 +26,14 @@ if (params.list) {
 
 if (
   params.out === undefined
+  || params.ch === undefined
   || params.cc === undefined
   || params.value === undefined
 ) Params.help();
 
 const midiOut = new easymidi.Output(params.out);
 midiOut.send('cc', {
+  channel: params.ch,
   controller: params.cc,
   value: params.value,
 });

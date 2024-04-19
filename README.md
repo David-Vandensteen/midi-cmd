@@ -1,5 +1,4 @@
-# midi-send
-![](https://i.ibb.co/PgzmGP2/midiSend.png)
+# midi-cmd
 
 A command-line utility for sending MIDI control change messages to a MIDI interface.  
 This tool can be useful for debugging or configuring a MIDI environment.  
@@ -18,18 +17,18 @@ npm i
 ## Usage
 ***Help:***
 ```
-node src\index.js --help
+npm start -- --help
 ```
 
 ***Available midi interfaces:***
 ```
-node src\index.js --list
+npm start -- --list
 ```
 
 ***example:***  
-To send a MIDI control change on MIDI interface name "myMidiOutName", channel 73, with the value 64:
+To send a MIDI control change on MIDI interface name "myMidiOutName", channel 0, controller 10 with the value 64:
 ```
-node src\index.js -i myMidiOutName -c 73 -v 64
+npm start -- -o myMidiOutName --ch 0 -c 10 -v 64
 ```
 
 ## Development
